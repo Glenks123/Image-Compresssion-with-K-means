@@ -58,8 +58,8 @@ def cluster_assignment(X, centroids):
     for i in range(m):
         distances = []
         for centroid in centroids:
-            L2_norm = np.sqrt(sum((X[i] - centroid) ** 2))
-            squared_distance = L2_norm ** 2
+            euclidean_distance = np.sqrt(sum((X[i] - centroid) ** 2))
+            squared_distance = euclidean_distance ** 2
             distances.append(squared_distance)
         
         idx[i] = distances.index(min(distances))
